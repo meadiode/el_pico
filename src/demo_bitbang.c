@@ -47,7 +47,7 @@ static void display_frame(const uint8_t *bitmap)
             
             for (uint bn = 0; bn < 8; bn++)
             {
-                gpio_put(EL_VID_PIN, (~byte >> bn) & 1);
+                gpio_put(EL_VID_PIN, (byte >> bn) & 1);
                 gpio_put(EL_VCLK_PIN, 0);
                 gpio_put(EL_VCLK_PIN, 1);
             }

@@ -21,6 +21,7 @@ set (LIBS
         cmsis_core
         hardware_pwm
         hardware_pio
+        hardware_dma
 )
 
 add_executable(demo_bitbang demo_bitbang.c)
@@ -37,3 +38,13 @@ pico_generate_pio_header(demo_pio ${CMAKE_CURRENT_LIST_DIR}/el.pio OUTPUT_DIR ${
 target_include_directories(demo_pio PRIVATE ${CMAKE_CURRENT_LIST_DIR})
 target_link_libraries(demo_pio ${LIBS})
 pico_add_extra_outputs(demo_pio)
+
+
+add_executable(demo_pio_dma demo_pio_dma.c)
+
+pico_generate_pio_header(demo_pio_dma ${CMAKE_CURRENT_LIST_DIR}/el.pio OUTPUT_DIR ${CMAKE_CURRENT_LIST_DIR})
+
+target_include_directories(demo_pio_dma PRIVATE ${CMAKE_CURRENT_LIST_DIR})
+target_link_libraries(demo_pio_dma ${LIBS})
+pico_add_extra_outputs(demo_pio_dma)
+

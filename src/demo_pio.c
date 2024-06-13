@@ -61,11 +61,6 @@ int main(void)
     {
         memcpy(frame0.data, pics[pic_idx], SCR_HEIGHT * SCR_STRIDE);
 
-        for (uint i = 0; i < sizeof(frame0.data); i++)
-        {
-            frame0.data[i] = ~frame0.data[i];
-        }
-
         for (uint i = 0; i < 1; i++)
         {
             for (size_t j = 0; j < sizeof(frame0) / sizeof(uint32_t); j++)
