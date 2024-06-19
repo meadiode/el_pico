@@ -1,0 +1,3 @@
+[submodule "src/tinygl_1b"]
+	path = src/tinygl_1b
+	url = https://github.com/meadiode/tinygl_1b.git
